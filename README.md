@@ -51,35 +51,18 @@ You will see:
         
 **3. Enter the relative or absolute path to any test image:**
 
-data/test/spoiled/rotated_by_15_image.png
-
-
 The model will output:
 
->>> Prediction: SPOILED
+        >>> Prediction: SPOILED
 
+Type `exit` to quit.
 
-Type exit to quit.
+# Notes :
 
-3. Optional: GUI-based inference
+- Make sure the saved_models folder contains the trained weights.
 
-If you prefer a simple GUI for selecting images, you can run:
+- The project uses ResNet18 pretrained on ImageNet.
 
-python -m scripts.gui_inference
+- The image preprocessing (resize, normalize) must match training preprocessing for accurate predictions.
 
-
-A small window will pop up, letting you browse and select images. The prediction will be displayed in the GUI.
-
-Notes
-
-Make sure the saved_models folder contains the trained weights.
-
-The project uses ResNet18 pretrained on ImageNet.
-
-The image preprocessing (resize, normalize) must match training preprocessing for accurate predictions.
-
-Warnings about pretrained parameters in torchvision can be ignored or suppressed.
-
-License
-
-This project is for educational purposes only.
+- Warnings about pretrained parameters in torchvision can be ignored or suppressed.
