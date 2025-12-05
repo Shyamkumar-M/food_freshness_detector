@@ -6,24 +6,80 @@ The project includes training and inference scripts, and allows interactive term
 
 # Installation :
 
-1.Clone the repository : 
-    Initially, we need to clone the repository tp our local storage to access it, via the command :    
-        `git clone https://github.com/Shyamkumar-M/food_freshness_detector.git`
-
-    And, move into the directory.
-        `cd food_freshness_detector`
-
-2.Create and activate virtual environment :
-    Create a virtual environment, it must be created only once
-        `python -m venv venv`
-
-    Activate it, this must be done at every new session
+**1.Clone the repository :** 
+    Initially, we need to clone the repository tp our local storage to access it, via the command :   
     
-        `.\venv\Scripts\Activate.ps1`
+       git clone https://github.com/Shyamkumar-M/food_freshness_detector.git
+And, move into the directory.
 
-3.Install required packages :
-    Run
-        `pip install torch torchvision pillow scikit-learn`
+        cd food_freshness_detector
 
-#Usage
-1. Train the model
+**2.Create and activate virtual environment :**
+
+Create a virtual environment, it must be created only once
+
+        python -m venv venv
+
+Activate it, this must be done at every new session
+    
+        .\venv\Scripts\Activate.ps1
+
+**3.Install required packages :**
+
+Run
+    
+    
+        pip install torch torchvision pillow scikit-learn
+
+# Usage
+**1. Train the model :**
+
+This will train the model and save the weights in saved_models/resnet18_freshness.pth.
+
+        python -m scripts.train
+**2. Run inference (terminal-based) :**
+        python -m scripts.inference
+
+You will see:
+
+        Using device: cpu
+        Loading model...
+        Model loaded. Type 'exit' to quit.
+
+        Enter image path:
+        
+        
+**3. Enter the relative or absolute path to any test image:**
+
+data/test/spoiled/rotated_by_15_image.png
+
+
+The model will output:
+
+>>> Prediction: SPOILED
+
+
+Type exit to quit.
+
+3. Optional: GUI-based inference
+
+If you prefer a simple GUI for selecting images, you can run:
+
+python -m scripts.gui_inference
+
+
+A small window will pop up, letting you browse and select images. The prediction will be displayed in the GUI.
+
+Notes
+
+Make sure the saved_models folder contains the trained weights.
+
+The project uses ResNet18 pretrained on ImageNet.
+
+The image preprocessing (resize, normalize) must match training preprocessing for accurate predictions.
+
+Warnings about pretrained parameters in torchvision can be ignored or suppressed.
+
+License
+
+This project is for educational purposes only.
