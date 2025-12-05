@@ -18,6 +18,7 @@ The project includes training and inference scripts, and allows interactive term
         `python -m venv venv`
 
     Activate it, this must be done at every new session
+    
         `.\venv\Scripts\Activate.ps1`
 
 3.Install required packages :
