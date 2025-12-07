@@ -38,24 +38,9 @@ This will train the model and save the weights in saved_models/resnet18_freshnes
 
         python -m scripts.train
 **2. Run inference (terminal-based) :**
-        python -m scripts.inference
+        python -m scripts.gui
 
-You will see:
-
-        Using device: cpu
-        Loading model...
-        Model loaded. Type 'exit' to quit.
-
-        Enter image path:
-        
-        
-**3. Enter the relative or absolute path to any test image:**
-
-The model will output:
-
-        >>> Prediction: SPOILED
-
-Type `exit` to quit.
+You will see a GUI to choose an image, and see the prediction.
 
 # Notes :
 
